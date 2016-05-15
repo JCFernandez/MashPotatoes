@@ -1,0 +1,23 @@
+﻿<form ng-submit="$event.preventDefault()" name="participantRequirementForm">
+    <md-input-container class="md-block" flex-gt-sm>
+        <label>Skills</label>
+        <input name="skills" md-maxlength="80" required ng-model="ngModel.skills">
+        <div ng-messages="ngModel.title.$error" ng-hide="showHints">
+            <div ng-message="required">This is required.</div>
+            <div ng-message="md-maxlength">The name has to be less than 80 characters long.</div>
+        </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+        <label>Wage</label>
+        <textarea name="wage" ng-model="ngModel.wage" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        <div ng-messages="ngModel.desc.$error" ng-hide="showHints">
+            <div ng-message="md-maxlength">The name has to be less than 150 characters long.</div>
+        </div>
+    </md-input-container>
+
+
+    <!--<file-upload name="files" ng-model="ngModel.files" multiple="true" allow="" controls="fileUploadControls"></file-upload>-->
+
+    <md-button ng-disabled="participantRequirementForm.$invalid || participantRequirementForm.$pending" class="md-raised" ng-if="!ngModel.Id" ng-click="add()">Add Participant Requirement</md-button>
+    <md-button ng-disabled="participantRequirementForm.$invalid" class="md-raised" ng-if="ngModel.Id" ng-click="edit()">Update Participant Requirement</md-button>
+</form>

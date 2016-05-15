@@ -34,20 +34,16 @@
                     </md-radio-group>
                 </md-input-container>
             </div>
+            <div layout="row" ng-if="formFields.isProfit">
+                <md-input-container>
+                    <label> wage </label>
+                    <input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required/>
+                </md-input-container>
+            </div>
         </md-content>
 
-
-        <md-input-container>
-            <label> wage </label>
-            <input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required/>
-        </md-input-container>
-        <md-input-container>
-            <label> Skills Required </label>
-            <input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required />
-        </md-input-container>
-
         <div>
-            <h3>Participant Requirements</h3>
+            <h3>Skill Requirements</h3>
             <span flex></span>
             <md-button ng-click="addParticipantRequirement(formFields.participantRequirements)">Add Participant Requirement</md-button>
         </div>

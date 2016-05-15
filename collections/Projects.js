@@ -36,6 +36,7 @@ Schemas.SkillRequirement = new SimpleSchema({
 Schemas.Participant = new SimpleSchema({
     userId: {
         type: String,
+        optional: true,
         label: 'UserId'
     },
     skillRequirements: {

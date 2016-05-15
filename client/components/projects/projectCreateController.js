@@ -1,5 +1,5 @@
 angular.module('mashPotatoes').controller('ProjectCreateController', ['$scope', function($scope) {
-    $scope.formFields = {};
+    $scope.formFields = {isProfit: true};
     $scope.c = Constants;
     $scope.expectedTimeSpanTypes = lodash.values(Constants.ExpectedTimeSpanType);
 
