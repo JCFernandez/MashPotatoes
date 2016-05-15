@@ -8,7 +8,7 @@ angular.module('mashPotatoes').directive('userAvatar', ['$reactive', 'user', 'ut
 			'diameter': '=',
 			'allowSet': '='
 		},
-		templateUrl: 'client/shared/users/userAvatarView.ng.html',
+		templateUrl: 'client/components/shared/users/userAvatarView.ng.html',
 		controller: function ($scope) {
 
 			$scope.imgStyle = {};

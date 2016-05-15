@@ -30,7 +30,16 @@ angular.module('mashPotatoes').controller('SidebarLeftController', ['$scope', '$
                     onClick: function() {
                         $state.go('projects');
                     }
-                }
+                },
+                {
+                    title: 'Account',
+                    subtitle: '',
+                    desc: '',
+                    onClick: function() {
+                        $state.go('settings');
+                    }
+                },
+
             ]
         }
     ];

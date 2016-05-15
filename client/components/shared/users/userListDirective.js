@@ -10,7 +10,7 @@ angular.module('mashPotatoes').directive('userList', ['$compile', 'settings', '$
 			'filter': '=',
 			'selectedId': '='
 		},
-		templateUrl: 'client/shared/users/userListView.ng.html',
+		templateUrl: 'client/components/shared/users/userListView.ng.html',
 		controller: function ($scope) {
 			$scope.C_roles = Constants.Roles;
 			$reactive(this).attach($scope);

@@ -1,3 +1,16 @@
 <div layout="column">
     <head-toolbar></head-toolbar>
+    <md-content flex>
+        <div layout-padding layout="column">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Search</label>
+                <input ng-model="filter.search">
+            </md-input-container>
+            <div layout="row">
+
+            </div>
+        </div>
+
+        <project-list ng-model="projects"></project-list>
+    </md-content>
 </div>

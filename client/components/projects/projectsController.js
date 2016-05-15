@@ -1,4 +1,4 @@
-angular.module('mashPotatoes').controller('ProjectsController', ['$scope', '$reactive', '$state', function($scope, $reactive, $state) {
+angular.module('mashPotatoes').controller('ProjectsController', ['$scope', '$reactive', '$state', 'utils', function($scope, $reactive, $state, utils) {
     $reactive(this).attach($scope);
 
     $scope.helpers({
@@ -7,7 +7,19 @@ angular.module('mashPotatoes').controller('ProjectsController', ['$scope', '$rea
         }
     });
 
-    $scope.displayCreate = function() {
-        $state.go('projectCreate');
+    $scope.displayCreate = function(ev) {
+        utils.dialog(ev, 'client/components/projects/projectCreateView.ng.html', 'ProjectCreateController');
+        //$state.go('projectCreate');
+    }
+
+    $scope.getListItemClass = function(proj) {
+        if (proj.owner == Meteor.userId()) {
+            return 'leftBorder';
+        }
+        return '';
+    }
+
+    $scope.openProject = function(proj) {
+        $state.go('projectDetail', { id: proj._id });
     }
 }]);

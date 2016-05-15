@@ -1,7 +1,7 @@
 <div layout="column">
     <head-toolbar md-scroll-shrink="false"></head-toolbar>
-    <form name="projectCreate">
-        <md-content layout-padding>
+    <md-content layout-padding>
+        <form name="projectCreate">
             <div layout="row">
                 <md-input-container flex="50">
                     <label> Project Name </label>
@@ -42,7 +42,9 @@
             </div>
             <participant-requirement-list ng-model="formFields.participants" ng-disabled="ngDisabled"></participant-requirement-list>
 
-        </md-content>
+            <md-button ng-disabled="projectCreate.$invalid" ng-click="create()">Create</md-button>
+        </form>
+    </md-content>
 
         <!--<div>-->
             <!--<h3>Skill Requirements</h3>-->
@@ -67,6 +69,4 @@
             <!--</div>-->
         <!--</div>-->
 
-        <md-button ng-disabled="projectCreate.$invalid" ng-click="create()">Create</md-button>
-    </form>
 </div>

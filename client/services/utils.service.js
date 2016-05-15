@@ -1,6 +1,6 @@
 angular.module('mashPotatoes').factory('utils', ['$rootScope', '$mdDialog', '$mdMedia', '$mdToast', function($rootScope, $mdDialog, $mdMedia, $mdToast) {
 
-    var dialog = function(ev, templateUrl, data, options) {
+    var dialog = function(ev, templateUrl, controller, data, options) {
         var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $rootScope.dialogFullscreen;
 
         if ($rootScope.dialogFullscreen == undefined) {
@@ -12,8 +12,8 @@ angular.module('mashPotatoes').factory('utils', ['$rootScope', '$mdDialog', '$md
         }
 
         var opts = {
-            controller: 'DialogFormController',
-            templateUrl: 'client/components/dialogs/' + templateUrl,
+            controller: controller,
+            templateUrl: templateUrl,
             parent: angular.element(document.body),
             targetEvent: ev ? ev : angular.element(document.body),
             clickOutsideToClose: true,

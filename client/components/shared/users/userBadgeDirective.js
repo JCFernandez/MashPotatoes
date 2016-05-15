@@ -6,7 +6,7 @@ angular.module('mashPotatoes').directive('userBadge', ['$reactive', function ($r
 		scope: { // @ = local scope (string), = = bi-directional binding, & = parent execution binding (function)
             'ngModel': '='
 		},
-		templateUrl: 'client/shared/users/userBadgeView.ng.html',
+		templateUrl: 'client/components/shared/users/userBadgeView.ng.html',
 		controller: function ($scope) {
 			$reactive(this).attach($scope);
 

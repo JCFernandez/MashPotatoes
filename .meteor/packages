@@ -41,6 +41,7 @@ harrison:papa-parse
 stevezhu:lodash
 fourseven:scss
 wolves:bourbon
+sebhero:angular-material-icons
 
 cfs:standard-packages                       #file upload handlers
 cfs:gridfs

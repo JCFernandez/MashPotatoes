@@ -6,7 +6,7 @@ angular.module('mashPotatoes').directive('userProfileSettings', ['user', 'utils'
 		scope: { // @ = local scope (string), = = bi-directional binding, & = parent execution binding (function)
             'ngModel': '='
 		},
-		templateUrl: 'client/shared/users/userProfileSettingsView.ng.html',
+		templateUrl: 'client/components/shared/users/userProfileSettingsView.ng.html',
 		controller: function ($scope) {
 
 			$scope.modelOptions = {

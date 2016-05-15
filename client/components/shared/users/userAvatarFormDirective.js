@@ -7,7 +7,7 @@ angular.module('mashPotatoes').directive('userAvatarForm', ['$reactive', 'user',
             'ngModel': '=',
 			'onSubmit': '&'
 		},
-		templateUrl: 'client/shared/users/userAvatarFormView.ng.html',
+		templateUrl: 'client/components/shared/users/userAvatarFormView.ng.html',
 		controller: function ($scope) {
 			$reactive(this).attach($scope);
 
