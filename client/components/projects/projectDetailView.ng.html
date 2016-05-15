@@ -18,7 +18,7 @@
             <span>{{project.expectedTimeSpan.length}} {{project.expectedTimeSpan.type}}</span>
         </div>
         <div ng-if="settings.view == 'chat'">
-            sadf
+            <spark-chat room-id="project.sparkRoom" user="user"></spark-chat>
         </div>
     </md-content>
 </div>

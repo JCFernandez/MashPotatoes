@@ -1,4 +1,4 @@
-angular.module('mashPotatoes').controller('ProjectDetailController', ['$scope', '$reactive', '$stateParams', function($scope, $reactive, $stateParams) {
+angular.module('mashPotatoes').controller('ProjectDetailController', ['$scope', '$reactive', '$stateParams', 'user', function($scope, $reactive, $stateParams, s_user) {
     $reactive(this).attach($scope);
 
     let projectId = $stateParams.id;
@@ -13,4 +13,8 @@ angular.module('mashPotatoes').controller('ProjectDetailController', ['$scope', 
         }
     });
 
+
+    s_user.onReady(function() {
+        $scope.user = s_user.currentUser;
+    });
 }]);
