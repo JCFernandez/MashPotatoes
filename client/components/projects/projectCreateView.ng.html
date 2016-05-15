@@ -34,13 +34,14 @@
                     </md-radio-group>
                 </md-input-container>
             </div>
-            <div layout="row" ng-if="formFields.isProfit">
-                <md-input-container>
-                    <label> wage </label>
-                    <input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required/>
-                </md-input-container>
-            </div>
-            <participant-requirement-list ng-model="formFields.participants" ng-disabled="ngDisabled"></participant-requirement-list>
+
+            <!--<div layout="row" ng-if="formFields.isProfit">-->
+                <!--<md-input-container>-->
+                    <!--<label> wage </label>-->
+                    <!--<input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required/>-->
+                <!--</md-input-container>-->
+            <!--</div>-->
+            <participant-requirement-list ng-model="formFields.participants" hide-wage="!formFields.isProfit" ng-disabled="ngDisabled"></participant-requirement-list>
 
             <md-button ng-disabled="projectCreate.$invalid" ng-click="create()">Create</md-button>
         </form>

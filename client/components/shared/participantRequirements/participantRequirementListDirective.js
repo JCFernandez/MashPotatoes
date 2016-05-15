@@ -6,13 +6,19 @@ angular.module('mashPotatoes').directive('participantRequirementList', ['$compil
 		scope: { // @ = local scope (string), = = bi-directional binding, & = parent execution binding (function)
             'ngModel': '=',
 			'ngDisabled': '=',
-			'title': '=?'
+			'title': '=?',
+			'hideWage': '=?'
 		},
 		templateUrl: 'client/components/shared/participantRequirements/participantRequirementListView.ng.html',
 		controller: function ($scope) {
 		},
 		link: function ($scope, element, attrs) {
 			if (!$scope.title) $scope.title = 'Notes';
+
+			setInterval(function() {
+
+				console.log($scope.hideWage);
+			}, 1000);
 
 			$scope.add = function(ev) {
 				$scope.ngModel.push({ edit: true });
