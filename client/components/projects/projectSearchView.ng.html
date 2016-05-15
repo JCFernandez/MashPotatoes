@@ -2,13 +2,23 @@
     <head-toolbar></head-toolbar>
     <md-content flex>
         <div layout-padding layout="column">
-            <md-input-container class="md-block" flex-gt-sm>
-                <label>Search</label>
-                <input ng-model="filter.search">
-            </md-input-container>
-            <div layout="row">
-
-            </div>
+            <form name="searchForm">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Search</label>
+                    <input ng-model="filter.search">
+                </md-input-container>
+                <div layout="row">
+                    <md-chips ng-model="filter.skills" name="skills">
+                        <md-chip-template>
+                            <strong>{{$chip}}</strong>
+                            <!--<em>(fruit)</em>-->
+                        </md-chip-template>
+                    </md-chips>
+                    <div class="errors" ng-messages="searchForm.skills.$error">
+                        <div ng-message="md-max-chips">The maxmium of chips is reached.</div>
+                    </div>
+                </div>
+            </form>
         </div>
 
         <project-list ng-model="projects"></project-list>
