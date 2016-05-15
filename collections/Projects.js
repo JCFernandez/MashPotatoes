@@ -33,7 +33,11 @@ Schemas.SkillRequirement = new SimpleSchema({
     }
 });
 
-Schemas.ParticipantRequirement = new SimpleSchema({
+Schemas.Participant = new SimpleSchema({
+    userId: {
+        type: String,
+        label: 'UserId'
+    },
     skillRequirements: {
         type: [Schemas.SkillRequirement],
         defaultValue: [],
@@ -48,6 +52,12 @@ Schemas.ParticipantRequirement = new SimpleSchema({
         type: Number,
         defaultValue: 0,
         label: 'Minimal Star Rating'
+    },
+    wage: {
+        type: Number,
+        defaultValue: 0,
+        decimal: true,
+        label: 'Alloted Wage'
     }
 });
 
@@ -78,11 +88,6 @@ Schemas.Project = new SimpleSchema({
         type: String,
         label: 'Owner'
     },
-    participants: {
-        type: [String],
-        defaultValue: [],
-        label: 'Participants'
-    },
     name: {
         type: String,
         label: 'Name'
@@ -100,15 +105,10 @@ Schemas.Project = new SimpleSchema({
         type: Boolean,
         label: 'Is For Profit'
     },
-    wage: {
-        type: Schemas.Wage,
-        optional: true,
-        label: 'Wage'
-    },
-    participantRequirements: {
-        type: [Schemas.ParticipantRequirement],
+    participants: {
+        type: [Schemas.Participant],
         defaultValue: [],
-        label: 'Participant Requirements'
+        label: 'Participant'
     }
 });
 

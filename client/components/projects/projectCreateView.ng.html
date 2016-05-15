@@ -1,21 +1,42 @@
 <div layout="column">
     <head-toolbar md-scroll-shrink="false"></head-toolbar>
     <form name="projectCreate">
-        <md-input-container>
-            <label> Project Name </label>
-            <input type="text" name="name" ng-model="formFields.name" aria-label="project name" required/>
-            <div ng-messages="projectCreate.name.$error">
-                <div ng-message="required">This field is required.</div>
+        <md-content layout-padding>
+            <div layout="row">
+                <md-input-container flex="50">
+                    <label> Project Name </label>
+                    <input type="text" name="name" ng-model="formFields.name" aria-label="project name" required/>
+                    <div ng-messages="projectCreate.name.$error">
+                        <div ng-message="required">This field is required.</div>
+                    </div>
+                </md-input-container>
             </div>
-        </md-input-container>
-        <md-input-container>
-            <label> Project Description </label>
-            <textarea name="desc" ng-model="formFields.desc" aria-label="project description" required></textarea>
-        </md-input-container>
-        <md-radio-group ng-model="formFields.isProfit" layout="row" layout-align="start center">
-            <md-radio-button ng-value="true">profit</md-radio-button>
-            <md-radio-button ng-value="false">non-profit</md-radio-button>
-        </md-radio-group>
+            <div layout="row">
+                <md-input-container flex="100">
+                    <label> Project Description </label>
+                    <textarea name="desc" ng-model="formFields.desc" aria-label="project description" required></textarea>
+                </md-input-container>
+            </div>
+            <div layout="row">
+                <md-input-container>
+                    <label> Time Span Length</label>
+                    <input type="text" name="timeSpanLength" ng-model="formFields.expectedTimeSpan.length" aria-label="Expected Time Span Length" required />
+                </md-input-container>
+                <md-select ng-model="formFields.expectedTimeSpan.type" ng-init="formFields.expectedTimeSpan.type = c.ExpectedTimeSpanType.MONTH" aria-label="Expected Time Span Type">
+                    <md-option ng-repeat="expectedTimeSpanType in expectedTimeSpanTypes" ng-value="expectedTimeSpanType">{{expectedTimeSpanType}}</md-option>
+                </md-select>
+            </div>
+            <div layout="row">
+                <md-input-container>
+                    <md-radio-group ng-model="formFields.isProfit" layout="row" layout-align="start center">
+                        <md-radio-button ng-value="true">profit</md-radio-button>
+                        <md-radio-button ng-value="false">non-profit</md-radio-button>
+                    </md-radio-group>
+                </md-input-container>
+            </div>
+        </md-content>
+
+
         <md-input-container>
             <label> wage </label>
             <input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required/>
@@ -24,16 +45,7 @@
             <label> Skills Required </label>
             <input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required />
         </md-input-container>
-        <p>Expected Time Span</p>
-        <div layout="row">
-            <md-input-container>
-                <label> Time Span Length</label>
-                <input type="text" name="timeSpanLength" ng-model="formFields.expectedTimeSpan.length" aria-label="Expected Time Span Length" required />
-            </md-input-container>
-            <md-select ng-model="formFields.expectedTimeSpan.type" ng-init="formFields.expectedTimeSpan.type = c.ExpectedTimeSpanType.MONTH" aria-label="Expected Time Span Type">
-                <md-option ng-repeat="expectedTimeSpanType in expectedTimeSpanTypes" ng-value="expectedTimeSpanType">{{expectedTimeSpanType}}</md-option>
-            </md-select>
-        </div>
+
         <div>
             <h3>Participant Requirements</h3>
             <span flex></span>
