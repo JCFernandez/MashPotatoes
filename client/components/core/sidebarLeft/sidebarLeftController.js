@@ -5,7 +5,7 @@ angular.module('mashPotatoes').controller('SidebarLeftController', ['$scope', '$
 
     $scope.menuSections = [
         {
-            header: '',
+            header: 'ssfad',
             items: [
                 {
                     title: 'Create',
