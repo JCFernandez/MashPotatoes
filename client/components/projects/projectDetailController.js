@@ -3,6 +3,10 @@ angular.module('mashPotatoes').controller('ProjectDetailController', ['$scope', 
 
     let projectId = $stateParams.id;
 
+    $scope.settings = {
+        view: 'overview'
+    };
+
     $scope.helpers({
         project: function() {
             return Projects.findOne({ _id: projectId });

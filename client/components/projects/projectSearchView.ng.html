@@ -8,15 +8,15 @@
                     <input ng-model="filter.search">
                 </md-input-container>
                 <div layout="row">
-                    <md-chips ng-model="filter.skills" name="skills">
-                        <md-chip-template>
-                            <strong>{{$chip}}</strong>
-                            <!--<em>(fruit)</em>-->
-                        </md-chip-template>
-                    </md-chips>
-                    <div class="errors" ng-messages="searchForm.skills.$error">
-                        <div ng-message="md-max-chips">The maxmium of chips is reached.</div>
-                    </div>
+                    <!--<md-chips ng-model="filter.skills" name="skills">-->
+                        <!--<md-chip-template>-->
+                            <!--<strong>{{$chip}}</strong>-->
+                            <!--&lt;!&ndash;<em>(fruit)</em>&ndash;&gt;-->
+                        <!--</md-chip-template>-->
+                    <!--</md-chips>-->
+                    <!--<div class="errors" ng-messages="searchForm.skills.$error">-->
+                        <!--<div ng-message="md-max-chips">The maxmium of chips is reached.</div>-->
+                    <!--</div>-->
                 </div>
             </form>
         </div>

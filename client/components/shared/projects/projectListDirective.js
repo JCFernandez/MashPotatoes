@@ -1,4 +1,4 @@
-angular.module('mashPotatoes').directive('projectList', [function() {
+angular.module('mashPotatoes').directive('projectList', ['$state', function($state) {
     return {
         restrict: 'E', // E = element, A = attribute, C = class, M = comment
         scope: { // @ = local scope (string), = = bi-directional binding, & = parent execution binding (function)

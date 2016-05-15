@@ -1,7 +1,10 @@
 <div layout="column">
-    <head-toolbar></head-toolbar>
+    <head-toolbar>
+        <md-button class="md-icon-button" ng-click="settings.view = 'overview'" aria-label="Overview"><md-icon md-svg-src="img/icons/ic_info_white_18px.svg"></md-icon> </md-button>
+        <md-button class="md-icon-button" ng-click="settings.view = 'chat'" aria-label="Chat"><md-icon md-svg-src="img/icons/ic_chat_white_18px.svg"></md-icon> </md-button>
+    </head-toolbar>
     <md-content>
-        <div class="overview">
+        <div ng-if="settings.view == 'overview'">
             <h2 ng-bind="project.name"></h2>
             <p ng-bind="project.desc"></p>
             <md-badge>{{ project.isProfit ? 'Profit' : 'Non-Profit' }}</md-badge>
@@ -13,6 +16,9 @@
             </span>
             <h3>Expected Time Span</h3>
             <span>{{project.expectedTimeSpan.length}} {{project.expectedTimeSpan.type}}</span>
+        </div>
+        <div ng-if="settings.view == 'chat'">
+            sadf
         </div>
     </md-content>
 </div>
