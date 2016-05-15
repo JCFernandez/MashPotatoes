@@ -4,7 +4,7 @@
         <md-icon class="md-avatar material-icons">insert_comment</md-icon>
 
         <div class="md-list-item-text" layout="column" ng-if="!participant.edit">
-            {{ participant.skills }}
+            {{ participant.skills }} | {{participant.wage}}
         </div>
         <div class="md-list-item-text" layout="column" ng-if="participant.edit">
             <form name="participantForm">

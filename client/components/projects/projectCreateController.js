@@ -1,5 +1,12 @@
 angular.module('mashPotatoes').controller('ProjectCreateController', ['$scope', function($scope) {
-    $scope.formFields = {isProfit: true, participants: []};
+    $scope.formFields = {
+        name: '',
+        owner: Meteor.userId(),
+        desc: '',
+        expectedTimeSpan: { length: 1, type: 'Months'},
+        isProfit: true,
+        participants: []
+    };
     $scope.c = Constants;
     $scope.expectedTimeSpanTypes = lodash.values(Constants.ExpectedTimeSpanType);
 
@@ -15,5 +22,11 @@ angular.module('mashPotatoes').controller('ProjectCreateController', ['$scope', 
     $scope.addSkillRequirement = function(pr) {
         if (!pr) pr = [];
         pr.push({ skill: '', isRequired: true });
+    }
+
+    $scope.create = function(){
+        console.log($scope.formFields);
+        Projects.insert($scope.formFields);
+        //$scope.onSubmit({ obj: $scope.formFields, type: 'add' });
     }
 }]);
