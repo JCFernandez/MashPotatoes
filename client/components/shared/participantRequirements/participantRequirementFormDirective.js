@@ -7,7 +7,7 @@ angular.module('mashPotatoes').directive('participantRequirementForm', ['$compil
             'ngModel': '=',
             'onSubmit': '&'
 		},
-		templateUrl: 'client/shared/participantRequirements/participantRequirementFormView.ng.html',
+		templateUrl: 'client/components/shared/participantRequirements/participantRequirementFormView.ng.html',
 		controller: function ($scope) {
 
 		},

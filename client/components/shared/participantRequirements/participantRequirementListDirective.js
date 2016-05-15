@@ -8,14 +8,14 @@ angular.module('mashPotatoes').directive('participantRequirementList', ['$compil
 			'ngDisabled': '=',
 			'title': '=?'
 		},
-		templateUrl: 'client/shared/participantRequirements/participantRequirementListView.ng.html',
+		templateUrl: 'client/components/shared/participantRequirements/participantRequirementListView.ng.html',
 		controller: function ($scope) {
 		},
 		link: function ($scope, element, attrs) {
 			if (!$scope.title) $scope.title = 'Notes';
 
 			$scope.add = function(ev) {
-				$scope.ngModel.push({ edit: true, owner: Meteor.userId(), createdAt: new Date() });
+				$scope.ngModel.push({ edit: true });
 			}
 
 			$scope.remove = function(ev, obj) {

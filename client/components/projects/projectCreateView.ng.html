@@ -40,30 +40,32 @@
                     <input type="text" name="wage" ng-model="formFields.wage" aria-label="wage" required/>
                 </md-input-container>
             </div>
+            <participant-requirement-list ng-model="formFields.participants" ng-disabled="ngDisabled"></participant-requirement-list>
+
         </md-content>
 
-        <div>
-            <h3>Skill Requirements</h3>
-            <span flex></span>
-            <md-button ng-click="addParticipantRequirement(formFields.participantRequirements)">Add Participant Requirement</md-button>
-        </div>
-        <div ng-repeat="pr in formFields.participantRequirements">
-            <div>
-                <h4>Skill Requirements</h4>
-                <span flex></span>
-                <md-button ng-click="addSkillRequirement(pr.skillRequirements)">Add Skill Requirement</md-button>
-            </div>
-            <h4>Skill Requirements</h4>
-            <div ng-repeat="sr in pr.skillRequirements" layout="row">
-                <md-input-container>
-                    <label> Skill </label>
-                    <input type="text" name="timeSpanLength" ng-model="sr.skill" aria-label="Expected Time Span Length" required />
-                </md-input-container>
-                <md-checkbox ng-model="sr.isRequired" aria-label="is Required">
-                    required
-                </md-checkbox>
-            </div>
-        </div>
+        <!--<div>-->
+            <!--<h3>Skill Requirements</h3>-->
+            <!--<span flex></span>-->
+            <!--<md-button ng-click="addParticipantRequirement(formFields.participantRequirements)">Add Participant Requirement</md-button>-->
+        <!--</div>-->
+        <!--<div ng-repeat="pr in formFields.participantRequirements">-->
+            <!--<div>-->
+                <!--<h4>Skill Requirements</h4>-->
+                <!--<span flex></span>-->
+                <!--<md-button ng-click="addSkillRequirement(pr.skillRequirements)">Add Skill Requirement</md-button>-->
+            <!--</div>-->
+            <!--<h4>Skill Requirements</h4>-->
+            <!--<div ng-repeat="sr in pr.skillRequirements" layout="row">-->
+                <!--<md-input-container>-->
+                    <!--<label> Skill </label>-->
+                    <!--<input type="text" name="timeSpanLength" ng-model="sr.skill" aria-label="Expected Time Span Length" required />-->
+                <!--</md-input-container>-->
+                <!--<md-checkbox ng-model="sr.isRequired" aria-label="is Required">-->
+                    <!--required-->
+                <!--</md-checkbox>-->
+            <!--</div>-->
+        <!--</div>-->
 
         <md-button ng-disabled="projectCreate.$invalid" ng-click="create()">Create</md-button>
     </form>
