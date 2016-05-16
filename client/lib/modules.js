@@ -5,7 +5,9 @@ mashPotatoesApp = angular.module('mashPotatoes', [
     angularMeteor,
     //"angular-meteor",
     "ui.router",
-    "ngMaterial"
+    "ngMaterial",
+    "ngFileUpload",
+    'ngImgCrop',
 ]);
 
 

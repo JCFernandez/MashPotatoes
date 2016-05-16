@@ -34,9 +34,11 @@ angular.module('mashPotatoes').directive('userAvatar', ['$reactive', 'user', 'ut
 				}
 			}, true);
 
-			$scope.currentUser = user.currentUser;
+			user.onReady(function() {
+				$scope.currentUser = user.currentUser;
+			});
 
-			$scope.$watch('currentUser', function(newVal, oldVal) {
+			$scope.$watch(function() { return user.currentUser; }, function(newVal, oldVal) {
 				if (!$scope.ngModel) $scope.displayAvatar(newVal);
 			});
 
@@ -61,7 +63,7 @@ angular.module('mashPotatoes').directive('userAvatar', ['$reactive', 'user', 'ut
 
 			$scope.setAvatar = function(ev) {
 				if (!$scope.allowSet) return;
-				utils.dialog(ev, 'dialogUserAvatarFormView.ng.html', {
+				utils.dialog(ev, 'client/components/core/dialogs/dialogUserAvatarFormView.ng.html', 'DialogFormController', {
 					title: 'Set Avatar'
 				})
 				.then(function (result) {

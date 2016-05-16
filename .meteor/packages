@@ -46,3 +46,5 @@ sebhero:angular-material-icons
 cfs:standard-packages                       #file upload handlers
 cfs:gridfs
 cfs:filesystem
+danialfarid:ng-file-upload
+alexk111:ng-img-crop

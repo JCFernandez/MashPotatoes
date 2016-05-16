@@ -13,7 +13,7 @@ angular.module('mashPotatoes').factory('utils', ['$rootScope', '$mdDialog', '$md
 
         var opts = {
             controller: controller,
-            templateUrl: templateUrl,
+            templateUrl: templateUrl || 'DialogFormController',
             parent: angular.element(document.body),
             targetEvent: ev ? ev : angular.element(document.body),
             clickOutsideToClose: true,
